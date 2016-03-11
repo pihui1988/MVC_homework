@@ -170,7 +170,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\CreateViewModel.cs" />
+    <Compile Include="Models\客戶資料CreateViewModel.cs" />
     <Compile Include="Models\CustomData.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -186,6 +186,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomData.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\客戶資料EditViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\sysdiagrams.cs">
@@ -200,6 +201,7 @@
     <Compile Include="Models\客戶銀行資訊.cs">
       <DependentUpon>CustomData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\手機電話格式驗證.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
