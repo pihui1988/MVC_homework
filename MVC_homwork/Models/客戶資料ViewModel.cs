@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MVC_homwork.Models
 {
-    public class 客戶資料CreateViewModel
+    public class 客戶資料ViewModel
     {
         [Required(ErrorMessage="客戶名稱為必填欄位")]
         public string 客戶名稱 { get; set; }

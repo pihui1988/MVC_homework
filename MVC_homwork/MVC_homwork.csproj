@@ -170,38 +170,50 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\客戶資料CreateViewModel.cs" />
-    <Compile Include="Models\CustomData.Context.cs">
+    <Compile Include="Models\EFGeneratePartialClass.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CustomData.Context.tt</DependentUpon>
+      <DependentUpon>EFGeneratePartialClass.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CustomData.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomData.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CustomData.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomData.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\客戶資料EditViewModel.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>CustomData.tt</DependentUpon>
+    <Compile Include="Models\vw_客戶關聯統計表.cs">
+      <DependentUpon>客戶資料.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\客戶聯絡人.cs">
-      <DependentUpon>CustomData.tt</DependentUpon>
+      <DependentUpon>客戶資料.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\客戶聯絡人.Partial.cs">
+      <DependentUpon>EFGeneratePartialClass.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\客戶資料.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>客戶資料.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\客戶資料.cs">
-      <DependentUpon>CustomData.tt</DependentUpon>
+      <DependentUpon>客戶資料.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\客戶資料.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>客戶資料.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\客戶資料.Partial.cs">
+      <DependentUpon>EFGeneratePartialClass.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\客戶資料1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>客戶資料.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\客戶資料ViewModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\客戶銀行資訊.cs">
-      <DependentUpon>CustomData.tt</DependentUpon>
+      <DependentUpon>客戶資料.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\手機電話格式驗證.cs" />
+    <Compile Include="Models\客戶銀行資訊.Partial.cs">
+      <DependentUpon>EFGeneratePartialClass.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -214,22 +226,26 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\CustomData.edmx">
+    <EntityDeploy Include="Models\客戶資料.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CustomData.Designer.cs</LastGenOutput>
+      <LastGenOutput>客戶資料.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\CustomData.Context.tt">
+    <Content Include="Models\客戶資料.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CustomData.edmx</DependentUpon>
-      <LastGenOutput>CustomData.Context.cs</LastGenOutput>
+      <DependentUpon>客戶資料.edmx</DependentUpon>
+      <LastGenOutput>客戶資料.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\CustomData.edmx.diagram">
-      <DependentUpon>CustomData.edmx</DependentUpon>
+    <Content Include="Models\客戶資料.edmx.diagram">
+      <DependentUpon>客戶資料.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\CustomData.tt">
+    <Content Include="Models\客戶資料.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CustomData.edmx</DependentUpon>
-      <LastGenOutput>CustomData.cs</LastGenOutput>
+      <DependentUpon>客戶資料.edmx</DependentUpon>
+      <LastGenOutput>客戶資料1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\EFGeneratePartialClass.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EFGeneratePartialClass.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -293,6 +309,7 @@
     <Content Include="Views\客戶聯絡人\Details.cshtml" />
     <Content Include="Views\客戶聯絡人\Edit.cshtml" />
     <Content Include="Views\客戶聯絡人\Index.cshtml" />
+    <Content Include="Views\客戶資料\客戶關聯資料表.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

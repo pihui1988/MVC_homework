@@ -12,7 +12,7 @@ namespace MVC_homwork.Controllers
 {
     public class 客戶銀行資訊Controller : Controller
     {
-        private 客戶資料Entities db = new 客戶資料Entities();
+        private 客戶資料Entities1 db = new 客戶資料Entities1();
 
         // GET: 客戶銀行資訊
         public ActionResult Index()

@@ -14,7 +14,6 @@ namespace MVC_homwork.Models
     
     public partial class 客戶資料
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public 客戶資料()
         {
             this.客戶銀行資訊 = new HashSet<客戶銀行資訊>();
@@ -28,10 +27,9 @@ namespace MVC_homwork.Models
         public string 傳真 { get; set; }
         public string 地址 { get; set; }
         public string Email { get; set; }
+        public bool 是否已刪除 { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<客戶銀行資訊> 客戶銀行資訊 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<客戶聯絡人> 客戶聯絡人 { get; set; }
     }
 }

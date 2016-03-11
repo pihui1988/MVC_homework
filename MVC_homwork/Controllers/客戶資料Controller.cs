@@ -12,19 +12,17 @@ namespace MVC_homwork.Controllers
 {
     public class 客戶資料Controller : Controller
     {
-        private 客戶資料Entities db = new 客戶資料Entities();
+        private 客戶資料Entities1 db = new 客戶資料Entities1();
+
+        public ActionResult 客戶關聯資料表()
+        {
+            return View(db.vw_客戶關聯統計表.ToList());
+        }
 
         // GET: 客戶資料
-        public ActionResult Index(string keyword)
+        public ActionResult Index()
         {
-            var CustomerData = db.客戶資料.OrderByDescending(c => c.Id).AsQueryable();
-            //關鍵字查詢
-            if (!String.IsNullOrEmpty(keyword))
-            {
-                CustomerData = CustomerData.Where(c => c.客戶名稱.Contains(keyword));
-            }
-            //return View(db.客戶資料.ToList());
-            return View(CustomerData);
+            return View(db.客戶資料.Where(c => false == c.是否已刪除).ToList());
         }
 
         // GET: 客戶資料/Details/5
@@ -53,7 +51,7 @@ namespace MVC_homwork.Controllers
         // 詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,客戶名稱,統一編號,電話,傳真,地址,Email")] 客戶資料 客戶資料, 客戶資料CreateViewModel data)
+        public ActionResult Create([Bind(Include = "Id,客戶名稱,統一編號,電話,傳真,地址,Email")] 客戶資料 客戶資料)
         {
             if (ModelState.IsValid)
             {
@@ -117,7 +115,8 @@ namespace MVC_homwork.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             客戶資料 客戶資料 = db.客戶資料.Find(id);
-            db.客戶資料.Remove(客戶資料);
+            //db.客戶資料.Remove(客戶資料);
+            客戶資料.是否已刪除 = true;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
