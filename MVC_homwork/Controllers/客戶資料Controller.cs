@@ -20,9 +20,15 @@ namespace MVC_homwork.Controllers
         }
 
         // GET: 客戶資料
-        public ActionResult Index()
+        public ActionResult Index(string keyword)
         {
-            return View(db.客戶資料.Where(c => false == c.是否已刪除).ToList());
+            var data = db.客戶資料.Where(c => false == c.是否已刪除).AsQueryable();
+
+            if (!String.IsNullOrEmpty(keyword))
+            {
+                data = data.Where(p => p.客戶名稱.Contains(keyword));
+            }
+            return View(data.ToList());
         }
 
         // GET: 客戶資料/Details/5
